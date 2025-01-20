@@ -5,6 +5,7 @@ import { addFetchedUsers } from '../redux/userSlice';
 
 
 const FetchUsers = () => {
+    
     const dispatch = useDispatch();
     const FetchData = async () => {
         try {
