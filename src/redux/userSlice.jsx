@@ -6,7 +6,7 @@ export const userSlice = createSlice({
     initialState:[],
     reducers:{
         addFetchedUsers:(state, action) =>{
-            state = action.payload;
+            state.push(action.payload);
         }
     }
 });

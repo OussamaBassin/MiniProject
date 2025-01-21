@@ -10,8 +10,13 @@ const FetchUsers = () => {
     const FetchData = async () => {
         try {
             const response = await axios.get('https://670ed5b73e7151861655eaa3.mockapi.io/Stagiaire');
-            dispatch(addFetchedUsers(response.data));
-            console.log(response.data);
+            
+            response.data.map((element) => {
+                dispatch(addFetchedUsers(element));
+            });
+            console.log(response.data)
+
+            
         } catch (error) {
             console.log(`we caught an error ${error}`);
         }
