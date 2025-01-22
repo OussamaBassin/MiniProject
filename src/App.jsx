@@ -11,24 +11,33 @@ import ModifyMyColor from './components/ModifyMyColor'
 import AddUser from './components/AddUser'
 import UsersList from './components/UsersList'
 import FetchUsers from './components/FetchUsers'
-import ShowDetails from './components/ShowDetails'
 
 function App() {
   return (<>
-    <main>
-      <header>
+    <FetchUsers/>
+    <main className='w-screen h-screen flex flex-col items-center justify-center px-10 bg-gray-300'>
+      <header className='h-1/5 flex items-center justify-center py-5'>
         <img src={logo} />
       </header>
-      <section>
+      <section className='h-4/5 flex items-center justify-center'>
         <Routes>
-          <Route path='/' element={<><LoginForm/><FetchUsers/></>} />
+          <Route path='/' element={<LoginForm/>} />
           <Route path='/create-account' element={<CreateAccount/>}/>
-          <Route path='/accueil/:id' element={<><NavBar/><Accueil/></>}/>
-          <Route path='/profile/:id' element={<><NavBar/><Profile/></>} />
+          <Route path='/accueil/:id' element={<>
+            <div className='h-full w-full flex flex-col items-center'>
+            <NavBar/>
+            <Accueil/>
+            </div>
+          </>}/>
+          <Route path='/profile/:id' element={<>
+            <div className='h-full w-full flex flex-col items-center'>
+            <NavBar/>
+            <Profile/>
+            </div>
+          </>} />
           <Route path='/modify-color/:id' element={<ModifyMyColor/>} />
-          <Route path='/add-user' element={<AddUser/>} />
+          <Route path='/add-user/:id' element={<AddUser/>} />
           <Route path='/users-list' element={<UsersList/>} />
-          <Route path='/show-details/:id' element={<ShowDetails/>} />
         </Routes>
       </section>
     </main>

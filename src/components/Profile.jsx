@@ -5,15 +5,17 @@ import { useNavigate , useParams } from 'react-router-dom';
 
 const Profile = () => {
   const {id} = useParams();
-  const user = useSelector((state) => state.userStore.find((el) => el.id===id));
+  const user = useSelector((state) => state.userStore.find((el) => el.id==id));
   const navigate = useNavigate();
   return (
     <>
-    <div>
+    <div className='w-full h-full flex items-center justify-center'>
+      <div>
       <p>Name : {user.nom}</p> <br />
       <p>Last Name: {user.prenom}</p> <br />
       <p>Email : {user.email}</p> <br />
       <Button onClick={()=>{navigate(`/accueil/${id}`)}}>Go back</Button>
+      </div>
     </div>
     </>
   )

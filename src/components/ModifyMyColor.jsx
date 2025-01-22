@@ -1,14 +1,31 @@
 import React from 'react'
 import { useSelector ,useDispatch} from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useParams,useNavigate } from 'react-router-dom';
+import { modifyColor } from '@/redux/userSlice';
+import { Button } from './ui/button';
 const ModifyMyColor = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+
+  const [color,setColor] = useState('');
+  const dispatch = useDispatch(); 
+  const user = useSelector((state) => state.userStore.find((el) => parseInt(el.id) == parseInt(id) ));
+  const handleChange = (e) =>{
+    setColor(e.target.value)
+  }
+
+
   return (
-    <div>
-      <select name="" id="">
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+    <div className='flex gap-2'>
+      <select className=' py-1.5 px-0.5 rounded-sm ' value={color} onChange={handleChange}>
+        <option value="" >Select a color</option>
+        <option value="#FF8C00" >orange</option>
+        <option value="#00008B">dark-blue</option>
+        <option value="#555555">gray</option>
       </select>
+      <Button onClick={()=>{dispatch(modifyColor({id:user.id, couleur: color})); navigate(`/accueil/${id}`)}}>Change</Button>
     </div>
   )
 }

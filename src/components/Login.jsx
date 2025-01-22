@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import FetchUsers from "./FetchUsers";
 
 
 const LoginForm = () => {
@@ -33,10 +34,12 @@ const LoginForm = () => {
 
     return (
         <>
-        <div className="w-1/2 h-60 bg-gray-800 p-10 flex flex-col justify-between  ">
-            <Input type="email" name="email" placeholder="Email"  onChange={handleChange}  value={loginInfo.email} className="w-1/2 bg-white text-gray-700"/>
-            <Input type="password" name="password" placeholder="Password" onChange={handleChange} value={loginInfo.password}  className="w-1/2 bg-white text-gray-700"/>
+        <div className="w-full h-2/3 p-8 flex flex-col justify-between  ">
+            <h1 className="text-3xl text-black font-bold">Login</h1>
+            <Input type="email" name="email" placeholder="Email"  onChange={handleChange}  value={loginInfo.email} className=" bg-white text-gray-700"/>
+            <Input type="password" name="password" placeholder="Password" onChange={handleChange} value={loginInfo.password}  className=" bg-white text-gray-700"/>
             <Button className="w-1/4 bg-orange-500 hover:bg-orange-700" onClick={handleSubmit}>Login</Button>
+            <p className="text-black">You don't have an account ?  <Link to='/create-account' className="text-blue-500 hover:text-blue-900 underline">create one</Link></p>
         </div>
         </>
     )
