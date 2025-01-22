@@ -5,14 +5,17 @@ export const userSlice = createSlice({
     name: 'userSlice',
     initialState:[],
     reducers:{
-        addFetchedUsers:(state, action) =>{
+        addFetchedUsers:(state, action) => {
             state.push(action.payload);
+        },
+        modifyColor:(state,action) =>{
+            
         }
     }
 });
 
 
 
-export const {addFetchedUsers} = userSlice.actions;
+export const {addFetchedUsers  } = userSlice.actions;
 
 export default userSlice.reducer;
