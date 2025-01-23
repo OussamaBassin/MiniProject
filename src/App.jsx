@@ -21,7 +21,7 @@ function App() {
       </header>
       <section className='h-4/5 flex items-center justify-center'>
         <Routes>
-          <Route path='/MiniProject' element={<><LoginForm/><FetchUsers/></>} />
+          <Route path='/MiniProject/' element={<><LoginForm/><FetchUsers/></>} />
           <Route path='/create-account' element={<><CreateAccount/><FetchUsers/></>}/>
           <Route path='/accueil/:id' element={<>
             <div className='h-full w-full flex flex-col gap2 items-center'>
