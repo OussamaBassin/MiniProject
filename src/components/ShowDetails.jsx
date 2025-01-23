@@ -20,7 +20,7 @@ const ShowDetails = () => {
                 <p>pays: {user.Pays}</p>
                 <p>color: {user.couleur}</p>
                 <p>admin: {user.admin ? 'true' : 'false'}</p>
-                <Button onClick={()=> navigate(`/users-list`)}>go back</Button>
+                <Button onClick={()=> window.history.back()}>go back</Button>
             </section>
         </div>
     </>
