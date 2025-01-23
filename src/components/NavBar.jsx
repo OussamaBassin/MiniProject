@@ -31,7 +31,7 @@ const NavBar = () => {
                     <Link to={`/profile/${id}`}>Profile</Link>
                     <Link to={`/modify-color/${id}`}>Modify Color</Link>
                     <Link to={`/add-user/${id}`}>Add Users</Link>
-                    <Link to={`/users-list`}>Users List</Link>
+                    <Link to={`/users-list/${id}`}>Users List</Link>
                     <Button onClick={()=>navigate('/')}>Log Out</Button>
                 </nav>
             </>

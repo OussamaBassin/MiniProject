@@ -12,7 +12,7 @@ const Accueil = () => {
   return (
     <>
       <div className='h-full w-full flex justify-center items-center'>
-      <h1 className='font-bold text-4xl text-center '>Welcome back {user.nom} {user.prenom} your fave color is {user.couleur} </h1>
+      <h1 className='font-bold text-4xl text-center '>Welcome back <span style={{color:user.couleur}}>{user.nom} {user.prenom}</span> your fave color is <span style={{color:user.couleur}}>{user.couleur}</span> </h1>
       </div>
     
     </>

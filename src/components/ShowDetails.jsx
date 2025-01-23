@@ -4,7 +4,7 @@ import { useParams , useNavigate} from "react-router-dom";
 
 const ShowDetails = () => {
     const {id} = useParams();
-    const user = useSelector((state) => state.userStore.find((el) => el.id === id ));
+    const user = useSelector((state) => state.userStore.find((el) => el.id == id ));
     const navigate = useNavigate();
 
   return (

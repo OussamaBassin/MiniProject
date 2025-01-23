@@ -147,7 +147,7 @@ const CreateAccount = () => {
                 className="w-full py-1.5 px-0.5 rounded-sm"
                 onChange={handleChange}
               >
-                <option value="#FFA500">orange</option>
+                <option value="#EB5A0C">orange</option>
                 <option value="#00008B">dark-blue</option>
                 <option value="#555555">gray</option>
               </select>

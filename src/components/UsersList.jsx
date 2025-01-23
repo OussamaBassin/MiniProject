@@ -1,9 +1,10 @@
 
 import { useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import { Button } from './ui/button';
 
 const UsersList = () => {
+  const {id} = useParams();
   const globalUser = useSelector((state) => state.userStore);
   const navigate = useNavigate();
   const showDetails = (id) =>{
@@ -13,7 +14,11 @@ const UsersList = () => {
 
   return (
     <>
-      <div className='flex flex-wrap w-screen justify-center gap-2'>
+      <main className='w-full h-full py-2 flex flex-col items-center gap-2'>
+      <Button onClick={() => navigate(`/accueil/${id}`)} >
+                go Back
+      </Button>
+      <div className='flex flex-wrap h-full w-full justify-center gap-2 overflow-x-hidden'>
         {globalUser.map((el) => {
           return ( 
             <div className='w-1/4 bg-orange-700 p-2 rounded-md text-white space-y-2'> 
@@ -28,6 +33,7 @@ const UsersList = () => {
           );
         })}
       </div>
+      </main>
     </>
   );
 };

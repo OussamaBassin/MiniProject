@@ -21,7 +21,7 @@ const ModifyMyColor = () => {
     <div className='flex gap-2'>
       <select className=' py-1.5 px-0.5 rounded-sm ' value={color} onChange={handleChange}>
         <option value="" >Select a color</option>
-        <option value="#FF8C00" >orange</option>
+        <option value="#EB5A0C" >orange</option>
         <option value="#00008B">dark-blue</option>
         <option value="#555555">gray</option>
       </select>
