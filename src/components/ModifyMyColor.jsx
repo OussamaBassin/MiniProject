@@ -24,6 +24,8 @@ const ModifyMyColor = () => {
         <option value="#EB5A0C" >orange</option>
         <option value="#00008B">dark-blue</option>
         <option value="#555555">gray</option>
+        <option value="#FF0000">red</option>
+        <option value="#00FF00">green</option>
       </select>
       <Button onClick={()=>{dispatch(modifyColor({id:user.id, couleur: color})); navigate(`/accueil/${id}`)}}>Change</Button>
     </div>

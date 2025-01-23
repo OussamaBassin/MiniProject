@@ -15,7 +15,7 @@ const UsersList = () => {
   return (
     <>
       <main className='w-full h-full py-2 flex flex-col items-center gap-2'>
-      <Button onClick={() => navigate(`/accueil/${id}`)} >
+      <Button onClick={() => window.history.back()} >
                 go Back
       </Button>
       <div className='flex flex-wrap h-full w-full justify-center gap-2 overflow-x-hidden'>

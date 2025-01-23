@@ -38,7 +38,7 @@ function App() {
           <Route path='/modify-color/:id' element={<ModifyMyColor/>} />
           <Route path='/show-details/:id' element={<ShowDetails/>} />
           <Route path='/add-user/:id' element={<AddUser/>} />
-          <Route path='/users-list/:id' element={
+          <Route path='/users-list' element={
             <div className='w-full h-full'>
             <UsersList/>
             </div>
